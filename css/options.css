@@ -1,0 +1,23 @@
+html * {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.input-div {
+  display: table;
+}
+
+label {
+  display: table-row;
+}
+
+span,input {
+  display: table-cell;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  outline: none;
+}

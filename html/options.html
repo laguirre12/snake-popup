@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="../css/options.css" rel="stylesheet">
+    <link href="../css/jquery-alertigo.css" rel="stylesheet">
+
+    <title>Snake Popup Game</title>
+  </head>
+
+  <body>
+    <h2>Canvas Dimensions</h2>
+    <form>
+    <div class="input-div" id="canvas-div">
+      <label>
+        <span class="input-text">Height(px) :</span>
+        <input type="number" id="canvasHeight" value="500" step="5" min="250" max ="600" required>
+      </label>
+
+      <label>
+        <span class="input-text">Width(px) :</span>
+        <input type="number" id="canvasWidth" value="500" step="5" min="250" max="800" required>
+      </label>
+    </div>
+
+    <h2>Game Board Properties</h2>
+    <div class="input-div" id="board-div">
+      <label>
+        <span class="input-text">Background Color:</span>
+        <input type="color" id="boardColor" value="#161217" required>
+      </label>
+    </div>
+
+    <h2>Snake Properties</h2>
+    <div class="input-div" id="snake-div">
+      <label>
+        <span class="input-text">Body Color:</span>
+        <input type="color" id="snakeColor" value="#0c7872" required>
+      </label>
+
+      <label>
+        <span class="input-text">Snake Size(px) :</span>
+        <input type="number" id="snakeSize" value="20" step="1" min="1" max="50" required>
+      </label>
+
+      <label>
+        <span class="input-text">Start Size:</span>
+        <input type="number" id="startSize" value="1" step="1" min="1" max="50" required>
+      </label>
+
+      <label>
+        <span class="input-text">Grow Rate:</span>
+        <input type="number" id="growRate" value="2" step="1" min="0" required>
+      </label>
+    </div>
+
+    <h2>Apple Properties</h2>
+    <div class="input-div" id="apple-div">
+      <label>
+        <span class="input-text">Apple Color:</span>
+        <input type="color" id="appleColor" value="#a30204" required>
+      </label>
+
+      <label>
+        <span class="input-text">Apple Size(px) :</span>
+        <input type="number" id="appleSize" value="20" step="1" min="1" max="50" required>
+      </label>
+    </div>
+
+    <br/>
+    <button type="button" id="reset">Reset to Default</button>
+    <button type="button" id="save">Save Settings</button>
+    </form>
+
+    <div id="alertigo"></div>
+
+    <script src="../js/jquery-3.2.1.min.js"></script>
+    <script src="../js/jquery-alertigo.js"></script>
+    <script src="../js/snake/constants.js"></script>
+    <script src="../js/options.js"></script>
+  </body>
+</html>

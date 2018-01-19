@@ -1,0 +1,19 @@
+@font-face {
+  font-family: GameFont;
+  src: url('../fonts/Games.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,body,canvas {
+  max-width: 800px;
+  max-height: 600px;
+}
+
+#board {
+  font-family: 'Source Sans Pro', sans-serif;
+  display: block;
+}
