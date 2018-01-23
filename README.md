@@ -13,8 +13,6 @@ Enjoy Snake in a popup by using WASD or the arrow keys!
 
 ![Start Game text displayed](./images/demo_images/snake_default_demo.png "Start menu for the snake game")
 
-![Game Over screen](./images/demo_images/snake_game_over.png "Game Over menu for snake game")
-
 ## Technologies Used:
 - Javascript (with ES5\ES6 features)
 - HTML & CSS
