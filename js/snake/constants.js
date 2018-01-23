@@ -1,5 +1,6 @@
 /**
- * Copies properties from one object (a) to another object (b).
+ * Utility function that copies properties from one object (a)
+ *  to another object (b).
  * @param a {object} - The object to copy properties to.
  * @param b {object} - The object to copy properties from.
  * @param override {boolean} - Whether to override values in a if present in
@@ -24,7 +25,6 @@ const DEFAULT_GAME_SETTINGS = Object.freeze({
 
 // default game settings for visuals
 const DEFAULT_VIEW_SETTINGS = Object.freeze({
-  // canvas values
   canvasHeight : 500,
   canvasWidth : 500,
 
@@ -33,13 +33,14 @@ const DEFAULT_VIEW_SETTINGS = Object.freeze({
   appleSize : 20,
 
   // colors
-  fontColor  : '#349c24',
+  textColor  : '#349c24',
   snakeColor : '#0c7872',
   boardColor : '#161217',
   appleColor : '#a30204',
   snakeBorderColor: '#161217'
 });
 
+// copy over view & game settings to default settings
 const DEFAULT_SETTINGS = {};
 Object.copyObjectProperties(DEFAULT_SETTINGS, DEFAULT_GAME_SETTINGS, true);
 Object.copyObjectProperties(DEFAULT_SETTINGS, DEFAULT_VIEW_SETTINGS, true);
@@ -53,8 +54,8 @@ const Direction = Object.freeze({  // Object.freeze does not allow for
   UP    : Symbol("UP"),            // members to be changed/edited.
   DOWN  : Symbol("DOWN"),
   LEFT  : Symbol("LEFT"),
-  NONE  : Symbol("NONE"),          // represents no movement
   RIGHT : Symbol("RIGHT"),
+  NONE  : Symbol("NONE"),          // represents no movement
 
   opposite : function(dir) {
     let opp;
@@ -63,16 +64,17 @@ const Direction = Object.freeze({  // Object.freeze does not allow for
       case this.DOWN : opp = this.UP;    break;
       case this.LEFT : opp = this.RIGHT; break;
       case this.RIGHT: opp = this.LEFT;  break;
-      default        : opp = this.NONE;  break;
+      case this.NONE : opp = this.NONE;  break;
+      default        : opp = this.NONE;  break; // default is NONE
     }
     return opp;
   },
 
   isDirection : function(dir) {
     return dir === this.NONE ||
-           dir === this.UP   ||
-           dir === this.DOWN ||
-           dir === this.LEFT ||
-           dir === this.RIGHT;
+      dir === this.UP   ||
+      dir === this.DOWN ||
+      dir === this.LEFT ||
+      dir === this.RIGHT;
   }
 });

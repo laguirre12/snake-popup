@@ -25,7 +25,7 @@ function castSettingTypes(settings, callback) {
   settings.boardWidth   = parseInt(settings.boardWidth);
 
   // cast values to strings
-  settings.fontColor    = String(settings.fontColor);
+  settings.textColor    = String(settings.textColor);
   settings.snakeColor   = String(settings.snakeColor);
   settings.boardColor   = String(settings.boardColor);
   settings.appleColor   = String(settings.appleColor);
@@ -50,8 +50,8 @@ function retrieveSettings(callback) {
 }
 
 $(document).ready(() => {
-  let input = {};
-  let gameInterval; // stores the interval id for the game loop
+  const input = {};  // stores keyboard input for the game
+  let gameInterval;  // stores the interval id for the game loop
 
   // stop game
   const gameOver = () => {
@@ -86,17 +86,17 @@ $(document).ready(() => {
   // process key input, allow for WASD and Arrows
   const updateDirection = event => {
     switch(event.keyCode) {
-      case 87: input.direction = Direction.UP;    break;
+      case 87: input.direction = Direction.UP;    break; // WASD
       case 65: input.direction = Direction.LEFT;  break;
       case 83: input.direction = Direction.DOWN;  break;
       case 68: input.direction = Direction.RIGHT; break;
 
-      case 38: input.direction = Direction.UP;    break;
+      case 38: input.direction = Direction.UP;    break; // Arrows
       case 37: input.direction = Direction.LEFT;  break;
       case 40: input.direction = Direction.DOWN;  break;
       case 39: input.direction = Direction.RIGHT; break;
 
-      case 32: resetGame(); break;  // space reset game
+      case 32: resetGame(); break;  // space to reset game
       default: break;
     }
   };

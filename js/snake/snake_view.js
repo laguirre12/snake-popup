@@ -43,7 +43,7 @@ class SnakeView {
       this.settings.canvasHeight);
 
     this.ctx.globalAlpha = 1.0;
-    this.ctx.fillStyle = this.settings.fontColor;
+    this.ctx.fillStyle = this.settings.textColor;
     this.ctx.textAlign = 'center';
     this.ctx.font = '36px GameFont';
     this.ctx.fillText('Game Over',
@@ -67,7 +67,7 @@ class SnakeView {
       this.settings.canvasHeight);
 
     this.ctx.globalAlpha = 1.0;
-    this.ctx.fillStyle = this.settings.fontColor;
+    this.ctx.fillStyle = this.settings.textColor;
     this.ctx.textAlign = 'center';
     this.ctx.font = '48px GameFont';
     this.ctx.fillText('Snake',

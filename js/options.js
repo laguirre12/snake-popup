@@ -1,36 +1,56 @@
+/**
+ * Gets user game settings from the DOM and returns an object containing all
+ *  fields.
+ * @return {object} - an object containing the user settings in the input
+ *  fields
+ */
 function retrieveInputs() {
   const input = {
-    canvasHeight : $('#canvasHeight').val(),
-    canvasWidth  : $('#canvasWidth').val(),
-    boardColor   : $('#boardColor').val(),
-    snakeColor   : $('#snakeColor').val(),
-    snakeSize    : $('#snakeSize').val(),
-    startSize    : $('#startSize').val(),
-    growRate     : $('#growRate').val(),
-    appleColor   : $('#appleColor').val(),
-    appleSize    : $('#appleSize').val()
-  };
+    canvasHeight : $('#canvas-height').val(),
+    canvasWidth  : $('#canvas-width').val(),
+    boardColor   : $('#board-color').val(),
+    textColor    : $('#text-color').val(),
 
+    // apple properties
+    appleColor   : $('#apple-color').val(),
+    appleSize    : $('#apple-size').val(),
+
+    // snake properties
+    snakeColor   : $('#snake-color').val(),
+    snakeSize    : $('#snake-size').val(),
+    startSize    : $('#start-size').val(),
+    growRate     : $('#grow-rate').val(),
+    snakeBorderColor : $('#snake-border-color').val(),
+  };
+  // the number of tiles in the board is based on the snake and canvas size
   input.boardHeight = input.canvasHeight / input.snakeSize;
   input.boardWidth = input.canvasWidth / input.snakeSize;
   return input;
 }
 
+/**
+ * Updates the DOM to show the given settings.
+ * @param settings {object} - the game settings to update the DOM with
+ */
 function updateInputs(settings) {
-  $('#canvasHeight').val(settings.canvasHeight);
-  $('#canvasWidth').val(settings.canvasWidth);
-  $('#boardColor').val(settings.boardColor);
-  $('#snakeColor').val(settings.snakeColor);
-  $('#snakeSize').val(settings.snakeSize);
-  $('#startSize').val(settings.startSize);
-  $('#growRate').val(settings.growRate);
-  $('#appleColor').val(settings.appleColor);
-  $('#appleSize').val(settings.appleSize);
+  $('#canvas-height').val(settings.canvasHeight);
+  $('#canvas-width').val(settings.canvasWidth);
+  $('#board-color').val(settings.boardColor);
+  $('#text-color').val(settings.textColor);
+
+  $('#apple-color').val(settings.appleColor);
+  $('#apple-size').val(settings.appleSize);
+
+  $('#snake-color').val(settings.snakeColor);
+  $('#snake-size').val(settings.snakeSize);
+  $('#start-size').val(settings.startSize);
+  $('#grow-rate').val(settings.growRate);
+  $('#snake-border-color').val(settings.snakeBorderColor);
 }
 
 /**
  * Retrieves game settings from local storage and combines with
- * DEFAULT_GAME_SETTINGS for callback.
+ *  DEFAULT_GAME_SETTINGS for callback.
  * @param callback {function(obj)} - success callback called with retrieved
  *  game settings
  * @param failure  {function} - failure callback called if game settings
@@ -89,7 +109,6 @@ function success(msg) {
     life : '1000'
   });
 }
-
 
 $(document).ready(() => {
   // load settings from storage
