@@ -7,8 +7,7 @@ Play the classic Snake Game from any tab in your browser with this simple extens
 ## Examples
 Easily customize game settings by editing the options page!
 
-![Successfully save custom game settings](./images/demo_images/snake_save_success.png?raw=true "Succesfully save custom settings")
-![Failed to save setting due to bad settings.](./images/demo_images/snake_save_failed.png?raw=true "Failure to save custom settings")
+![Successfully save custom game settings](./images/demo_images/before_after_save.png?raw=true "Succesfully save custom settings")
 
 Enjoy Snake in a popup by using WASD or the arrow keys!
 
