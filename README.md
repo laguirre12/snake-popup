@@ -5,6 +5,16 @@ A Google Chrome extension that provides the classic Snake Game in a popup window
 Play the classic Snake Game from any tab in your browser with this simple extension. You can customize colors, sizes, the game difficulty to play the game asexactly as you want!
 
 ## Examples
+Easily customize game settings by editing the options page!
+
+![Successfully save custom game settings](./images/demo_images/snake_save_success.png?raw=true "Succesfully save custom settings")
+![Failed to save setting due to bad settings.](./images/demo_images/snake_save_failed.png?raw=true "Failure to save custom settings")
+
+Enjoy Snake in a popup by using WASD or the arrow keys!
+
+![Start Game text displayed](./images/demo_images/snake_default_demo.png "Start menu for the snake game")
+
+![Game Over screen](./images/demo_images/snake_game_over.png "Game Over menu for snake game")
 
 ## Technologies Used:
 - Javascript (with ES5\ES6 features)
